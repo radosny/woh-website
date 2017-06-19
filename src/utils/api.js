@@ -27,5 +27,9 @@ export function* get(url) {
 }
 
 export function* getCountries() {
-    return yield get(`${config.API_BASE_URL}\countries`);
+    return yield get(`${config.API_BASE_URL}/countries`);
+}
+
+export function* getVacations(countryId, year = 2017) {
+    return yield get(`${config.API_BASE_URL}/holidays/${year}/${countryId}`);
 }
